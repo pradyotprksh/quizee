@@ -7,8 +7,4 @@ import 'package:get/get.dart';
 /// This will throw any error which occurred while getting the data.
 class RepositoryCalls extends RepositoryMethods {
   final RemoteRepository _remoteRepository = Get.put(RemoteRepository());
-
-  @override
-  Future<WikiSearchResponse> search(String searchedQuery) =>
-      _remoteRepository.search(searchedQuery);
 }

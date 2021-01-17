@@ -3,4 +3,3 @@
 /// scroll listener, etc. Will be used to remove the view related code from
 /// the ui module. This will make UI module code much more cleaner.
 export 'common_interface.dart';
-export 'search_interface.dart';

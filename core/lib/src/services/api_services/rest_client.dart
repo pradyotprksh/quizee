@@ -19,9 +19,6 @@ abstract class RestClient {
     return _RestClient(dio, baseUrl: baseUrl);
   }
 
-  @GET(
-      '/api.php?action=query&format=json&prop=pageimages%7Cpageterms&generator=prefixsearch&redirects=1&formatversion=2&piprop=thumbnail&pithumbsize=250&pilimit=20&wbptterms=description&gpslimit=100')
-  Future<WikiSearchResponse> search(
-    @Query('gpssearch') String searchedQuery,
-  );
+  @GET('api.php?amount=10&difficulty=medium&type=multiple')
+  Future<QuizResponse> search();
 }

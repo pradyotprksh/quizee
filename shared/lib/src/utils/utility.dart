@@ -1,13 +1,11 @@
 import 'dart:ui';
 
-import 'package:core/core.dart';
 import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart' as intl;
 import 'package:logger/logger.dart';
 import 'package:shared/shared.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 /// A chunk of methods which can be used to
 /// the common operations performed everywhere
@@ -106,54 +104,5 @@ abstract class Utility {
     );
   }
 
-  /// Open the url if its a valid link.
-  static void openUrl(String title) async {
-    if (await canLaunch('https://en.wikipedia.org/wiki/$title')) {
-      Get.find<LocalRepository>().storeData(LocalKeys.clickedValue, title);
-      await launch('https://en.wikipedia.org/wiki/$title');
-    }
-  }
-
-  static void openHistoryPage() {
-    var history =
-        Get.find<LocalRepository>().getListStringValue(LocalKeys.clickedValue);
-    Get.bottomSheet<void>(
-      Scaffold(
-        appBar: AppBar(
-          leading: const CloseButton(
-            color: Colors.black,
-          ),
-          title: Text(
-            StringConstants.history,
-            style: Styles.black18,
-          ),
-          backgroundColor: Colors.white,
-        ),
-        body: (history.isNotEmpty)
-            ? SizedBox(
-                height: Dimens.fiftyPercent,
-                child: ListView.builder(
-                  padding: Dimens.padding5,
-                  shrinkWrap: true,
-                  itemCount: history.length,
-                  itemBuilder: (_, position) => SingleSearchedItem(
-                    history[position],
-                    '',
-                    '',
-                  ),
-                ),
-              )
-            : Container(
-                child: Center(
-                  child: Icon(
-                    Icons.history,
-                    color: Colors.black,
-                    size: Dimens.fifteenPercent,
-                  ),
-                ),
-              ),
-      ),
-      backgroundColor: Colors.white,
-    );
-  }
+  static void openHistoryPage() {}
 }

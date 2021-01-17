@@ -1,6 +1,5 @@
 import 'package:core/core.dart';
 import 'package:dio/dio.dart';
-import 'package:shared/shared.dart';
 
 /// An api repository class which will connect to the restful client
 /// and get the required data from there. [LocalRepository] can be used
@@ -15,16 +14,4 @@ class RemoteRepository extends RepositoryMethods {
 
   Dio _dio;
   RestClient _restClient;
-
-  @override
-  Future<WikiSearchResponse> search(String searchedQuery) async {
-    if (await Utility.isNetworkAvailable()) {
-      return _restClient.search(searchedQuery);
-    } else {
-      throw DioErrors(
-        StringConstants.noInternet,
-        NetworkConstants.noInternetCode,
-      );
-    }
-  }
 }

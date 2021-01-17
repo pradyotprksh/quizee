@@ -1,4 +1,3 @@
-import 'package:WikiSearch/src/views/views.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:shared/shared.dart';
@@ -18,9 +17,7 @@ class SplashScreen extends StatelessWidget {
             ],
             repeatForever: false,
             textStyle: Styles.boldWhite30,
-            onFinished: () {
-              RouteManagement.goToSearchScreen();
-            },
+            onFinished: () {},
           ),
     ),
       );

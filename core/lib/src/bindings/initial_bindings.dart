@@ -5,6 +5,6 @@ import 'package:get/get.dart';
 class InitialBindings extends Bindings {
   @override
   void dependencies() {
-    Get..put(SearchInterface())..put(RepositoryCalls())..put(CommonInterface());
+    Get..put(RepositoryCalls())..put(CommonInterface());
   }
 }
