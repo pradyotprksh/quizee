@@ -1,16 +1,23 @@
-import 'package:WikiSearch/src/views/views.dart';
 import 'package:core/core.dart';
 import 'package:dynamic_theme/dynamic_theme.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_analytics/observer.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
+import 'package:quizee/src/views/views.dart';
 import 'package:shared/shared.dart';
 
 /// Main entry of the application
 void main() async {
   try {
     WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp();
     Bloc.observer = BlocObservers();
+    await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(true);
+    FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
     Get.put(LocalRepository());
     await Get.find<LocalRepository>().init();
     runApp(MyApp());
@@ -25,7 +32,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var localLang =
-    Get.find<LocalRepository>().getStringValue(LocalKeys.localLang);
+        Get.find<LocalRepository>().getStringValue(LocalKeys.localLang);
+
+    var analytics = FirebaseAnalytics();
 
     return DynamicTheme(
       defaultBrightness: Brightness.light,
@@ -35,6 +44,9 @@ class MyApp extends StatelessWidget {
       },
       themedWidgetBuilder: (_, currentTheme) => GetMaterialApp(
         title: StringConstants.appName,
+        navigatorObservers: [
+          FirebaseAnalyticsObserver(analytics: analytics),
+        ],
         debugShowCheckedModeBanner: false,
         theme: currentTheme,
         translations: TranslationsFile(),

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1049253604720",
+    "project_id": "quizee-db5a8",
+    "storage_bucket": "quizee-db5a8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1049253604720:android:91314ec2a647074ec3f3b5",
+        "android_client_info": {
+          "package_name": "com.project.pradyotprakash.quizee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1049253604720-32vk6j3vo6iiutp4ahvnbmrmomn2bbaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW8lX22DmITz_zsUuXtzQH72T0VsrVP9E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1049253604720-32vk6j3vo6iiutp4ahvnbmrmomn2bbaq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
