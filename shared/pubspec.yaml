@@ -1,0 +1,23 @@
+name: shared
+description: A shared package to handle all the shared work in all the modules
+version: 0.0.1
+author: Pradyot Prakash
+homepage: https://play.google.com/store/apps/developer?id=Pradyot+Prakash
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  dependencies:
+    path: ../dependencies
+
+  core:
+    path: ../core
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter

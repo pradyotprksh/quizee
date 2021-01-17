@@ -1,0 +1,29 @@
+name: core
+description: The core package of our application which will handle all the core related working.
+version: 0.0.1
+author: Pradyot Prakash
+homepage: https://play.google.com/store/apps/developer?id=Pradyot+Prakash
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  dependencies:
+    path: ../dependencies
+
+  shared:
+    path: ../shared
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  retrofit_generator: any
+
+  build_runner: any
+
+  json_serializable: ^3.3.0
