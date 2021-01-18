@@ -26,4 +26,9 @@ class LocalRepository extends RepositoryMethods {
   /// Returns the list string values for the [key]
   List<String> getListStringValue(String key) =>
       _sharedPreference.getStringList(key) ?? [];
+
+  @override
+  Future<QuizResponse> search() {
+    throw UnimplementedError();
+  }
 }

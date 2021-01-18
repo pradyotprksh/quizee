@@ -107,6 +107,6 @@ abstract class Utility {
 
   /// Create the object for classes which are required before the app starts.
   static void createInitialDi() {
-    Get.put(UserBloc());
+    Get..put(RepositoryCalls())..put(UserBloc());
   }
 }

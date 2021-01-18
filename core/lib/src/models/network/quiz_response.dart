@@ -47,7 +47,9 @@ class Result {
   Type type;
   Difficulty difficulty;
   String question;
+  @JsonKey(name: 'correct_answer')
   String correctAnswer;
+  @JsonKey(name: 'incorrect_answers')
   List<String> incorrectAnswers;
 
   Result copyWith({

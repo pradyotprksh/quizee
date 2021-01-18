@@ -5,4 +5,8 @@ import 'package:core/core.dart';
 /// [RemoteRepository]. This will help by maintaining the same method
 /// class in [LocalRepository], [RemoteRepository] and [RepositoryCalls].
 abstract class RepositoryMethods {
+
+  /// Get the list of quiz question
+  Future<QuizResponse> search();
+
 }

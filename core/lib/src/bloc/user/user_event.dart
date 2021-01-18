@@ -11,3 +11,7 @@ class UserEvent extends Equatable {
 }
 
 class LoginEvent extends UserEvent {}
+
+class UserDetailsEvent extends UserEvent {}
+
+class NewQuizEvent extends UserEvent {}

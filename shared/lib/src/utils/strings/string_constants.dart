@@ -12,4 +12,8 @@ abstract class StringConstants {
   static String history = 'history'.tr;
   static String emptyText = 'emptyText'.tr;
   static String signInWithGoogle = 'signInWithGoogle'.tr;
+  static String welcome = 'welcome'.tr;
+  static String startQuiz = 'startQuiz'.tr;
+  static String quizDetails = 'quizDetails'.tr;
+  static String quizNotCreated = 'quizNotCreated'.tr;
 }

@@ -23,6 +23,11 @@ class TranslationsFile extends Translations {
           'noInternet':
               'You are not connected to the internet. Please enable internet to start using the application',
           'signInWithGoogle': 'Sign In With Google',
+          'welcome': 'Welcome',
+          'startQuiz': 'Start Quiz',
+          'quizNotCreated': 'Not able to create quiz',
+          'quizDetails':
+              'Starts the quiz. If a quiz is already in progress will continue that one instead of creating a new one. You will get 6 seconds for each question. If fail to answer then that will be marked as unanswered. So play fast.',
         },
       };
 }

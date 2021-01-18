@@ -1,9 +1,11 @@
 import 'dart:async';
 
 import 'package:connectivity/connectivity.dart';
+import 'package:core/core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared/shared.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 /// A controller which will be used to handle the basic
 /// operations in the application. This will be used to separate the UI related
@@ -42,4 +44,26 @@ class CommonInterface extends GetxController {
 
   /// Check if the user is logged in or not. Returns true if user is available.
   bool isUserLoggedIn() => FirebaseAuth.instance.currentUser != null;
+
+  /// Get user details
+  void getUserDetails() {
+    Get.find<UserBloc>().add(UserDetailsEvent());
+  }
+
+  void startQuiz() {
+    Get.defaultDialog<void>(
+      title: StringConstants.startQuiz,
+      middleText: StringConstants.quizDetails,
+      titleStyle: Styles.boldBlack22,
+      middleTextStyle: Styles.black18,
+      confirmTextColor: Colors.white,
+      onConfirm: () {
+        Get.back<void>();
+        Get.find<UserBloc>().add(NewQuizEvent());
+      },
+      onCancel: () {
+        Get.back<void>();
+      },
+    );
+  }
 }
