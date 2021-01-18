@@ -200,4 +200,19 @@ abstract class Utility {
       Get.back<void>();
     });
   }
+
+  /// Returns a String format date in 12th Nov 1992 format.
+  /// Will be using custom suffix for adding th/st/nd and rd to the day of the
+  /// date.
+  ///
+  /// [date] : the date which needs to be formatted.
+  static String formatDate(DateTime date) {
+    if (date == null) return '';
+    var suffix = 'th';
+    var digit = date.day % 10;
+    if ((digit > 0 && digit < 4) && (date.day < 11 || date.day > 13)) {
+      suffix = ['st', 'nd', 'rd'][digit - 1];
+    }
+    return intl.DateFormat("d'$suffix' MMMM yyyy, hh:mm a").format(date);
+  }
 }

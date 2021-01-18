@@ -1,4 +1,5 @@
 /// A ui part which will contains the main screen of the application.
+export 'history/history_screen.dart';
 export 'home/home_screen.dart';
 export 'login/login_screen.dart';
 export 'page_not_found/page_not_found_screen.dart';

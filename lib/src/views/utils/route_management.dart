@@ -33,4 +33,11 @@ abstract class RouteManagement {
       },
     );
   }
+
+  /// Go to the home screen.
+  static void goToHistory() {
+    Get.toNamed<void>(
+      HistoryScreen.routeName,
+    );
+  }
 }

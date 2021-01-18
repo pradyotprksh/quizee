@@ -29,6 +29,7 @@ class TranslationsFile extends Translations {
           'pressBackAgain':
               'Press back again to leave the current quiz. The current question will be marked as unanswered.',
           'yourScore': 'You Scored',
+          'completedOn': 'Completed On:',
           'quizDetails':
               'Starts the quiz. If a quiz is already in progress will continue that one instead of creating a new one. If pressed back on the current question then that will be marked as unanswered.',
         },

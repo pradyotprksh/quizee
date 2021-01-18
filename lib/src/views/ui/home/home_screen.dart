@@ -12,6 +12,15 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.purple,
+          onPressed: () {
+            RouteManagement.goToHistory();
+          },
+          child: const Icon(
+            Icons.history,
+          ),
+        ),
         backgroundColor: Get.theme.backgroundColor,
         body: GetBuilder<CommonInterface>(
           initState: (state) {
@@ -55,7 +64,7 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-        ),
+    ),
       );
 
   Widget _getUserProfileImage(UserState state) => SizedBox(

@@ -1,5 +1,5 @@
-import 'package:quizee/src/views/views.dart';
 import 'package:get/get.dart';
+import 'package:quizee/src/views/views.dart';
 
 /// Contains the list of pages or routes taken across the whole application.
 /// This will prevent us in using context for navigation. And also providing
@@ -20,6 +20,7 @@ abstract class Pages {
     homeRoute,
     loginRoute,
     quizRoute,
+    historyRoute,
   ];
 
   static var splashScreen = GetPage(
@@ -34,6 +35,13 @@ abstract class Pages {
     transitionDuration: transitionDuration,
     transition: Transition.downToUp,
     page: () => PageNotFoundScreen(),
+  );
+
+  static var historyRoute = GetPage(
+    name: HistoryScreen.routeName,
+    transitionDuration: transitionDuration,
+    transition: Transition.downToUp,
+    page: () => HistoryScreen(),
   );
 
   static var homeRoute = GetPage(
