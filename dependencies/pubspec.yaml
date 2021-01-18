@@ -52,6 +52,8 @@ dependencies:
 
   firebase_performance: ^0.5.0+1
 
+  lottie: ^0.7.0+1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

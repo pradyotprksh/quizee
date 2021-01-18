@@ -407,21 +407,21 @@ abstract class Styles {
 /// in the application
 abstract class ColorsValue {
   static const Map<int, Color> primaryColorSwatch = {
-    50: Color.fromRGBO(199, 61, 93, .1),
-    100: Color.fromRGBO(199, 61, 93, .2),
-    200: Color.fromRGBO(199, 61, 93, .3),
-    300: Color.fromRGBO(199, 61, 93, .4),
-    400: Color.fromRGBO(199, 61, 93, .5),
-    500: Color.fromRGBO(199, 61, 93, .6),
-    600: Color.fromRGBO(199, 61, 93, .7),
-    700: Color.fromRGBO(199, 61, 93, .8),
-    800: Color.fromRGBO(199, 61, 93, .9),
-    900: Color.fromRGBO(199, 61, 93, 1),
+    50: Color.fromRGBO(29, 49, 158, .1),
+    100: Color.fromRGBO(29, 49, 158, .2),
+    200: Color.fromRGBO(29, 49, 158, .3),
+    300: Color.fromRGBO(29, 49, 158, .4),
+    400: Color.fromRGBO(29, 49, 158, .5),
+    500: Color.fromRGBO(29, 49, 158, .6),
+    600: Color.fromRGBO(29, 49, 158, .7),
+    700: Color.fromRGBO(29, 49, 158, .8),
+    800: Color.fromRGBO(29, 49, 158, .9),
+    900: Color.fromRGBO(29, 49, 158, 1),
   };
 
-  static const Color primaryColorRgb = Color.fromRGBO(199, 61, 93, 1);
+  static const Color primaryColorRgb = Color.fromRGBO(29, 49, 158, 1);
 
-  static const Color primaryColorLight1Rgbo = Color.fromRGBO(199, 61, 93, .1);
+  static const Color primaryColorLight1Rgbo = Color.fromRGBO(29, 49, 158, .1);
 
   static const Color primaryColor = Color(
     primaryColorHex,
@@ -457,9 +457,9 @@ abstract class ColorsValue {
 
   static Color backgroundColor = Colors.white;
 
-  static const int primaryColorHex = 0xFFC73D5D;
+  static const int primaryColorHex = 0xFF1D319E;
 
-  static const int white70 = 0x70C73D5D;
+  static const int white70 = 0x701D319E;
 
   static const int orangeColorHex = 0xFFFDBB5E;
 

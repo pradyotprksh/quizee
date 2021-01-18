@@ -4,4 +4,5 @@ abstract class AssetsConstants {
   static const String backgroundImage = 'assets/background_image.jpg';
   static const String googleIcon = 'assets/google_icon.png';
   static const String defaultProfileImage = 'assets/default_profile.png';
+  static const String walkingAnimation = 'assets/walking.json';
 }
