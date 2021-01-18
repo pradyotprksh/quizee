@@ -62,6 +62,7 @@ class QuizBody extends StatelessWidget {
                 child: Text(
                   Utility.getUnicodeRemoveString(value),
                   textAlign: TextAlign.center,
+                  style: Styles.black18,
                 ),
               ),
             ),
