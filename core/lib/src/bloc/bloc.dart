@@ -3,3 +3,4 @@
 /// handling the events. This is also the architecture core module where
 /// more of the core related work will be done.
 export 'bloc_observers.dart';
+export 'user/user.dart';

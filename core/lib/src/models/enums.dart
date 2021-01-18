@@ -1,9 +1,10 @@
 /// Different enums used
 /// in the application
 
-enum SearchStatus {
+enum PageStatus {
   idle,
   loading,
   error,
   results,
+  success,
 }

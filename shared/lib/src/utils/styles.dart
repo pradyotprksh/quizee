@@ -31,7 +31,7 @@ abstract class Styles {
     accentColorBrightness: Brightness.dark,
     primaryColor: ColorsValue.primaryColor,
     backgroundColor: ColorsValue.backgroundColor,
-    primarySwatch: MaterialColor(
+    primarySwatch: const MaterialColor(
       ColorsValue.primaryColorHex,
       ColorsValue.primaryColorSwatch,
     ),
@@ -61,7 +61,7 @@ abstract class Styles {
     accentColorBrightness: Brightness.dark,
     primaryColor: ColorsValue.primaryColor,
     backgroundColor: ColorsValue.backgroundColor,
-    primarySwatch: MaterialColor(
+    primarySwatch: const MaterialColor(
       ColorsValue.primaryColorHex,
       ColorsValue.primaryColorSwatch,
     ),
@@ -419,53 +419,61 @@ abstract class ColorsValue {
     900: Color.fromRGBO(199, 61, 93, 1),
   };
 
-  static Color primaryColorRgb = const Color.fromRGBO(199, 61, 93, 1);
+  static const Color primaryColorRgb = Color.fromRGBO(199, 61, 93, 1);
 
-  static Color primaryColorLight1Rgbo = const Color.fromRGBO(199, 61, 93, .1);
+  static const Color primaryColorLight1Rgbo = Color.fromRGBO(199, 61, 93, .1);
 
-  static Color primaryColor = Color(
+  static const Color primaryColor = Color(
     primaryColorHex,
   );
 
-  static Color facebookColor = Color(
+  static const Color facebookColor = Color(
     facebookColorHex,
   );
 
-  static Color orangeColor = Color(
+  static const Color orangeColor = Color(
     orangeColorHex,
   );
 
-  static Color greyColor = Color(
+  static const Color greyColor = Color(
     greyColorHex,
   );
 
-  static Color lightGreyColor = Color(
+  static const Color lightGreyColor = Color(
     lightGreyColorHex,
   );
 
-  static Color lightGreyColor1 = Color(
+  static const Color lightGreyColor1 = Color(
     lightGreyColor1Hex,
   );
 
-  static Color titleGreyColor = Color(
+  static const Color lightGreyColor2 = Color(
+    lightGreyColor2Hex,
+  );
+
+  static const Color titleGreyColor = Color(
     titleGreyColorHex,
   );
 
   static Color backgroundColor = Colors.white;
 
-  static int primaryColorHex = 0xFFC73D5D;
+  static const int primaryColorHex = 0xFFC73D5D;
 
-  static int orangeColorHex = 0xFFFDBB5E;
+  static const int white70 = 0x70C73D5D;
 
-  static int facebookColorHex = 0xFF4084EF;
+  static const int orangeColorHex = 0xFFFDBB5E;
 
-  static int greyColorHex = 0xFF9BA3B7;
+  static const int facebookColorHex = 0xFF4084EF;
 
-  static int lightGreyColor1Hex = 0xFFE2E2E2;
+  static const int greyColorHex = 0xFF9BA3B7;
 
-  static int lightGreyColorHex = 0xFFE1E1E8;
+  static const int lightGreyColor1Hex = 0xFFE2E2E2;
 
-  static int titleGreyColorHex = 0xFFB2AEAE;
+  static const int lightGreyColorHex = 0xFFE1E1E8;
+
+  static const int titleGreyColorHex = 0xFFB2AEAE;
+
+  static const int lightGreyColor2Hex = 0xFFFAFAFA;
 
   static const Color transparent = Color.fromARGB(0, 255, 255, 255);
 

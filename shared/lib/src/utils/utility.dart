@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:core/core.dart';
 import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -104,5 +105,8 @@ abstract class Utility {
     );
   }
 
-  static void openHistoryPage() {}
+  /// Create the object for classes which are required before the app starts.
+  static void createInitialDi() {
+    Get.put(UserBloc());
+  }
 }

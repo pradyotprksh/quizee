@@ -18,6 +18,7 @@ void main() async {
     Bloc.observer = BlocObservers();
     await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(true);
     FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
+    Utility.createInitialDi();
     Get.put(LocalRepository());
     await Get.find<LocalRepository>().init();
     runApp(MyApp());
@@ -42,25 +43,30 @@ class MyApp extends StatelessWidget {
         if (brightness == Brightness.light) return Styles.lightTheme;
         return Styles.darkTheme;
       },
-      themedWidgetBuilder: (_, currentTheme) => GetMaterialApp(
-        title: StringConstants.appName,
-        navigatorObservers: [
-          FirebaseAnalyticsObserver(analytics: analytics),
+      themedWidgetBuilder: (_, currentTheme) => MultiBlocProvider(
+        providers: [
+          BlocProvider(create: (_) => Get.find<UserBloc>()),
         ],
-        debugShowCheckedModeBanner: false,
-        theme: currentTheme,
-        translations: TranslationsFile(),
-        locale: Locale(
-          localLang,
+        child: GetMaterialApp(
+          title: StringConstants.appName,
+          navigatorObservers: [
+            FirebaseAnalyticsObserver(analytics: analytics),
+          ],
+          debugShowCheckedModeBanner: false,
+          theme: currentTheme,
+          translations: TranslationsFile(),
+          locale: Locale(
+            localLang,
+          ),
+          textDirection: Utility.isDirectionRTL(localLang),
+          fallbackLocale: const Locale(
+            NetworkConstants.defaultLang,
+          ),
+          unknownRoute: Pages.unknownRoute,
+          initialBinding: InitialBindings(),
+          initialRoute: Pages.initialRoute,
+          getPages: Pages.listOfPages,
         ),
-        textDirection: Utility.isDirectionRTL(localLang),
-        fallbackLocale: const Locale(
-          NetworkConstants.defaultLang,
-        ),
-        unknownRoute: Pages.unknownRoute,
-        initialBinding: InitialBindings(),
-        initialRoute: Pages.initialRoute,
-        getPages: Pages.listOfPages,
       ),
     );
   }
