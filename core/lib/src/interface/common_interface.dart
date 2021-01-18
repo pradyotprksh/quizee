@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:connectivity/connectivity.dart';
 import 'package:get/get.dart';
 import 'package:shared/shared.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 /// A controller which will be used to handle the basic
 /// operations in the application. This will be used to separate the UI related
@@ -38,4 +39,7 @@ class CommonInterface extends GetxController {
       }
     });
   }
+
+  /// Check if the user is logged in or not. Returns true if user is available.
+  bool isUserLoggedIn() => FirebaseAuth.instance.currentUser != null;
 }

@@ -86,6 +86,12 @@ abstract class Dimens {
     twenty,
     fifty,
   );
+  static const EdgeInsets padding50_15_50_30 = EdgeInsets.fromLTRB(
+    fifty,
+    fifteen,
+    fifty,
+    thirty,
+  );
   static const EdgeInsets padding24_0_40_34 = EdgeInsets.only(
     left: fourty,
     right: fourty,

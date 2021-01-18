@@ -11,4 +11,5 @@ abstract class StringConstants {
   static String okay = 'okay'.tr;
   static String history = 'history'.tr;
   static String emptyText = 'emptyText'.tr;
+  static String signInWithGoogle = 'signInWithGoogle'.tr;
 }

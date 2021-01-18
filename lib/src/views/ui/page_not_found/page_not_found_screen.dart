@@ -5,6 +5,8 @@ import 'package:shared/shared.dart';
 
 /// A screen which will be shown when the selected route is not found.
 class PageNotFoundScreen extends StatelessWidget {
+  static const String routeName = '/notFound';
+
   @override
   Widget build(BuildContext context) => Scaffold(
     backgroundColor: Get.theme.backgroundColor,

@@ -57,10 +57,10 @@ class MyApp extends StatelessWidget {
         fallbackLocale: const Locale(
           NetworkConstants.defaultLang,
         ),
-        onUnknownRoute: (_) =>
-            MaterialPageRoute<dynamic>(builder: (_) => PageNotFoundScreen()),
+        unknownRoute: Pages.unknownRoute,
         initialBinding: InitialBindings(),
-        home: SplashScreen(),
+        initialRoute: Pages.initialRoute,
+        getPages: Pages.listOfPages,
       ),
     );
   }

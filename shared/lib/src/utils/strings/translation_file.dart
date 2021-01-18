@@ -22,6 +22,7 @@ class TranslationsFile extends Translations {
               'Wikipedia is a multilingual open-collaborative online encyclopedia created and maintained by a community of volunteer editors using a wiki-based editing system.',
           'noInternet':
               'You are not connected to the internet. Please enable internet to start using the application',
+          'signInWithGoogle': 'Sign In With Google',
         },
       };
 }
