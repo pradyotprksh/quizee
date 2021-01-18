@@ -3,6 +3,7 @@ import 'package:core/core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:quizee/src/views/ui/history/widget/widget.dart';
 import 'package:shared/shared.dart';
 
 /// A history screen to show all the past games played by the user.
@@ -45,46 +46,7 @@ class HistoryScreen extends StatelessWidget {
               );
             } else {
               var snapshot = quizSnapshot.data.docs;
-              return ListView.builder(
-                itemCount: snapshot.length,
-                itemBuilder: (_, position) {
-                  var singleQuizDetails = snapshot[position];
-                  var quizDetails = singleQuizDetails.data();
-                  var completedOn =
-                      quizDetails[NetworkConstants.completedOn] as int;
-                  var score = quizDetails[NetworkConstants.score] as int;
-                  return Card(
-                    child: Padding(
-                      padding: Dimens.padding15,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Text(
-                            '${StringConstants.completedOn} ${Utility.formatDate(DateTime.fromMillisecondsSinceEpoch(completedOn))}',
-                            style: Styles.black12,
-                          ),
-                          Dimens.boxHeight15,
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Text(
-                                StringConstants.yourScore,
-                                textAlign: TextAlign.center,
-                                style: Styles.black18,
-                              ),
-                              Text(
-                                '$score / 10',
-                                style: Styles.boldAppColor80,
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  );
-                },
-              );
+              return HistoryList(snapshot);
             }
           },
         ),
