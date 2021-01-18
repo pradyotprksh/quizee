@@ -103,7 +103,10 @@ class UserBloc extends Bloc<UserEvent, UserState> {
 
   /// Map new quiz event to state
   Stream<UserState> _mapNewQuizEventToState(NewQuizEvent event) async* {
-    yield state.copyWith(status: PageStatus.loading);
+    yield state.copyWith(
+      status: PageStatus.loading,
+      submitType: SubmitType.home,
+    );
     try {
       var documentId = '';
       var currentQuiz = await FirebaseFirestore.instance

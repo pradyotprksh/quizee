@@ -6,7 +6,7 @@ import 'package:shared/shared.dart';
 
 /// A chunk of styles used in the application.
 abstract class Styles {
-  static String baseFontFamily = GoogleFonts.ptSans().fontFamily;
+  static String baseFontFamily = GoogleFonts.fredokaOne().fontFamily;
 
   static RoundedRectangleBorder buttonShapeBorder = RoundedRectangleBorder(
     side: const BorderSide(
@@ -100,135 +100,135 @@ abstract class Styles {
 
   // Different style used in the application
   // light
-  static TextStyle bodyTextLight1 = GoogleFonts.ptSans(
+  static TextStyle bodyTextLight1 = GoogleFonts.fredokaOne(
     fontSize: Dimens.fourteen,
     color: Colors.black,
     fontWeight: FontWeight.normal,
   );
-  static TextStyle bodyTextLight2 = GoogleFonts.ptSans(
+  static TextStyle bodyTextLight2 = GoogleFonts.fredokaOne(
     fontSize: Dimens.sixTeen,
     color: Colors.black,
     fontWeight: FontWeight.normal,
   );
-  static TextStyle subtitleLight1 = GoogleFonts.ptSans(
+  static TextStyle subtitleLight1 = GoogleFonts.fredokaOne(
     color: ColorsValue.titleGreyColor,
     fontSize: Dimens.twelve,
     fontWeight: FontWeight.normal,
   );
-  static TextStyle subtitleLight2 = GoogleFonts.ptSans(
+  static TextStyle subtitleLight2 = GoogleFonts.fredokaOne(
     color: ColorsValue.titleGreyColor,
     fontSize: Dimens.eighteen,
     fontWeight: FontWeight.normal,
   );
-  static TextStyle buttonLight = GoogleFonts.ptSans(
+  static TextStyle buttonLight = GoogleFonts.fredokaOne(
     fontWeight: FontWeight.bold,
     fontSize: Dimens.sixTeen,
   );
-  static TextStyle captionLight = GoogleFonts.ptSans(
+  static TextStyle captionLight = GoogleFonts.fredokaOne(
     color: ColorsValue.titleGreyColor,
     fontSize: Dimens.fourteen,
     fontWeight: FontWeight.normal,
   );
-  static TextStyle headlineLight6 = GoogleFonts.ptSans(
+  static TextStyle headlineLight6 = GoogleFonts.fredokaOne(
     fontSize: Dimens.fourteen,
     color: Colors.black,
     fontWeight: FontWeight.bold,
   );
-  static TextStyle headlineLight5 = GoogleFonts.ptSans(
+  static TextStyle headlineLight5 = GoogleFonts.fredokaOne(
     fontSize: Dimens.sixTeen,
     color: Colors.black,
     fontWeight: FontWeight.bold,
   );
-  static TextStyle headlineLight4 = GoogleFonts.ptSans(
+  static TextStyle headlineLight4 = GoogleFonts.fredokaOne(
     fontSize: Dimens.eighteen,
     color: Colors.black,
     fontWeight: FontWeight.bold,
   );
-  static TextStyle headlineLight3 = GoogleFonts.ptSans(
+  static TextStyle headlineLight3 = GoogleFonts.fredokaOne(
     fontSize: Dimens.twenty,
     color: Colors.black,
     fontWeight: FontWeight.bold,
   );
-  static TextStyle headlineLight2 = GoogleFonts.ptSans(
+  static TextStyle headlineLight2 = GoogleFonts.fredokaOne(
     fontSize: Dimens.twentyTwo,
     color: Colors.black,
     fontWeight: FontWeight.bold,
   );
-  static TextStyle headlineLight1 = GoogleFonts.ptSans(
+  static TextStyle headlineLight1 = GoogleFonts.fredokaOne(
     fontSize: Dimens.twentyFour,
     color: Colors.black,
     fontWeight: FontWeight.bold,
   );
 
   // dark
-  static TextStyle bodyTextDark1 = GoogleFonts.ptSans(
+  static TextStyle bodyTextDark1 = GoogleFonts.fredokaOne(
     fontSize: Dimens.fourteen,
     color: Colors.white,
   );
-  static TextStyle bodyTextDark2 = GoogleFonts.ptSans(
+  static TextStyle bodyTextDark2 = GoogleFonts.fredokaOne(
     fontSize: Dimens.sixTeen,
     color: Colors.white,
   );
-  static TextStyle subtitleDark1 = GoogleFonts.ptSans(
+  static TextStyle subtitleDark1 = GoogleFonts.fredokaOne(
     fontSize: Dimens.fourteen,
     color: Colors.white,
   );
-  static TextStyle subtitleDark2 = GoogleFonts.ptSans(
+  static TextStyle subtitleDark2 = GoogleFonts.fredokaOne(
     fontSize: Dimens.twelve,
     color: Colors.white,
   );
-  static TextStyle buttonDark = GoogleFonts.ptSans(
+  static TextStyle buttonDark = GoogleFonts.fredokaOne(
     fontWeight: FontWeight.bold,
     fontSize: Dimens.sixTeen,
   );
-  static TextStyle captionDark = GoogleFonts.ptSans(
+  static TextStyle captionDark = GoogleFonts.fredokaOne(
     fontSize: Dimens.fourteen,
     color: Colors.black,
   );
-  static TextStyle headlineDark6 = GoogleFonts.ptSans(
+  static TextStyle headlineDark6 = GoogleFonts.fredokaOne(
     fontSize: Dimens.fourteen,
     color: Colors.white,
     fontWeight: FontWeight.bold,
   );
-  static TextStyle headlineDark5 = GoogleFonts.ptSans(
+  static TextStyle headlineDark5 = GoogleFonts.fredokaOne(
     fontSize: Dimens.sixTeen,
     color: Colors.white,
     fontWeight: FontWeight.bold,
   );
-  static TextStyle headlineDark4 = GoogleFonts.ptSans(
+  static TextStyle headlineDark4 = GoogleFonts.fredokaOne(
     fontSize: Dimens.eighteen,
     color: Colors.white,
     fontWeight: FontWeight.bold,
   );
-  static TextStyle headlineDark3 = GoogleFonts.ptSans(
+  static TextStyle headlineDark3 = GoogleFonts.fredokaOne(
     fontSize: Dimens.twenty,
     color: Colors.white,
     fontWeight: FontWeight.bold,
   );
-  static TextStyle headlineDark2 = GoogleFonts.ptSans(
+  static TextStyle headlineDark2 = GoogleFonts.fredokaOne(
     fontSize: Dimens.twentyTwo,
     color: Colors.white,
     fontWeight: FontWeight.bold,
   );
-  static TextStyle headlineDark1 = GoogleFonts.ptSans(
+  static TextStyle headlineDark1 = GoogleFonts.fredokaOne(
     fontSize: Dimens.twentyFour,
     color: Colors.white,
     fontWeight: FontWeight.bold,
   );
 
-  static TextStyle boldAppColor16 = GoogleFonts.ptSans(
+  static TextStyle boldAppColor16 = GoogleFonts.fredokaOne(
     fontWeight: FontWeight.bold,
     color: ColorsValue.primaryColor,
     fontSize: Dimens.sixTeen,
   );
 
-  static TextStyle boldWhite16 = GoogleFonts.ptSans(
+  static TextStyle boldWhite16 = GoogleFonts.fredokaOne(
     fontWeight: FontWeight.bold,
     color: Colors.white,
     fontSize: Dimens.sixTeen,
   );
 
-  static TextStyle boldWhite23 = GoogleFonts.ptSans(
+  static TextStyle boldWhite23 = GoogleFonts.fredokaOne(
     fontWeight: FontWeight.bold,
     color: Colors.white,
     fontSize: Dimens.twentyThree,
@@ -240,145 +240,145 @@ abstract class Styles {
     fontFamily: 'SignPainterRegular',
   );
 
-  static TextStyle white16 = GoogleFonts.ptSans(
+  static TextStyle white16 = GoogleFonts.fredokaOne(
     color: Colors.white,
     fontSize: Dimens.sixTeen,
     fontWeight: FontWeight.normal,
   );
 
-  static TextStyle lightGrey18 = GoogleFonts.ptSans(
+  static TextStyle lightGrey18 = GoogleFonts.fredokaOne(
     color: ColorsValue.lightGreyColor,
     fontSize: Dimens.eighteen,
     fontWeight: FontWeight.normal,
   );
 
-  static TextStyle white12 = GoogleFonts.ptSans(
+  static TextStyle white12 = GoogleFonts.fredokaOne(
     color: Colors.white,
     fontSize: Dimens.twelve,
     fontWeight: FontWeight.normal,
   );
 
-  static TextStyle white12Underline = GoogleFonts.ptSans(
+  static TextStyle white12Underline = GoogleFonts.fredokaOne(
     color: Colors.white,
     fontSize: Dimens.twelve,
     fontWeight: FontWeight.normal,
     decoration: TextDecoration.underline,
   );
 
-  static TextStyle white14 = GoogleFonts.ptSans(
+  static TextStyle white14 = GoogleFonts.fredokaOne(
     color: Colors.white,
     fontSize: Dimens.fourteen,
     fontWeight: FontWeight.normal,
   );
 
-  static TextStyle blackBold15 = GoogleFonts.ptSans(
+  static TextStyle blackBold15 = GoogleFonts.fredokaOne(
     color: Colors.black,
     fontSize: Dimens.fifteen,
     fontWeight: FontWeight.bold,
   );
 
-  static TextStyle grey14 = GoogleFonts.ptSans(
+  static TextStyle grey14 = GoogleFonts.fredokaOne(
     color: ColorsValue.greyColor,
     fontSize: Dimens.fourteen,
     fontWeight: FontWeight.normal,
   );
 
-  static TextStyle orange16 = GoogleFonts.ptSans(
+  static TextStyle orange16 = GoogleFonts.fredokaOne(
     color: ColorsValue.orangeColor,
     fontSize: Dimens.sixTeen,
     fontWeight: FontWeight.normal,
   );
 
-  static TextStyle orange14 = GoogleFonts.ptSans(
+  static TextStyle orange14 = GoogleFonts.fredokaOne(
     color: ColorsValue.orangeColor,
     fontSize: Dimens.fourteen,
     fontWeight: FontWeight.normal,
   );
 
-  static TextStyle appColor18 = GoogleFonts.ptSans(
+  static TextStyle appColor18 = GoogleFonts.fredokaOne(
     color: ColorsValue.primaryColor,
     fontSize: Dimens.eighteen,
     fontWeight: FontWeight.normal,
   );
 
-  static TextStyle appColor14 = GoogleFonts.ptSans(
+  static TextStyle appColor14 = GoogleFonts.fredokaOne(
     color: ColorsValue.primaryColor,
     fontSize: Dimens.fourteen,
     fontWeight: FontWeight.normal,
   );
 
-  static TextStyle boldBlack36 = GoogleFonts.ptSans(
+  static TextStyle boldBlack36 = GoogleFonts.fredokaOne(
     color: Colors.black,
     fontSize: Dimens.thirtySix,
     fontWeight: FontWeight.bold,
   );
 
-  static TextStyle boldBlack28 = GoogleFonts.ptSans(
+  static TextStyle boldBlack28 = GoogleFonts.fredokaOne(
     color: Colors.black,
     fontSize: Dimens.twentyEight,
     fontWeight: FontWeight.bold,
   );
 
-  static TextStyle boldAppColor36 = GoogleFonts.ptSans(
+  static TextStyle boldAppColor36 = GoogleFonts.fredokaOne(
     color: ColorsValue.primaryColor,
     fontSize: Dimens.thirtySix,
     fontWeight: FontWeight.bold,
   );
 
-  static TextStyle black18 = GoogleFonts.ptSans(
+  static TextStyle black18 = GoogleFonts.fredokaOne(
     color: Colors.black,
     fontSize: Dimens.eighteen,
   );
 
-  static TextStyle grey16 = GoogleFonts.ptSans(
+  static TextStyle grey16 = GoogleFonts.fredokaOne(
     color: ColorsValue.greyColor,
     fontSize: Dimens.sixTeen,
     fontWeight: FontWeight.normal,
   );
 
-  static TextStyle boldAppColor30 = GoogleFonts.ptSans(
+  static TextStyle boldAppColor30 = GoogleFonts.fredokaOne(
     fontWeight: FontWeight.bold,
     color: ColorsValue.primaryColor,
     fontSize: Dimens.thirty,
   );
 
-  static TextStyle boldWhite30 = GoogleFonts.ptSans(
+  static TextStyle boldWhite30 = GoogleFonts.fredokaOne(
     fontWeight: FontWeight.bold,
     color: Colors.white,
     fontSize: Dimens.thirty,
   );
 
-  static TextStyle boldWhite150 = GoogleFonts.ptSans(
+  static TextStyle boldWhite150 = GoogleFonts.fredokaOne(
     fontWeight: FontWeight.bold,
     color: Colors.white,
     fontSize: Dimens.oneHundredFifty,
   );
 
-  static TextStyle boldBlack26 = GoogleFonts.ptSans(
+  static TextStyle boldBlack26 = GoogleFonts.fredokaOne(
     fontWeight: FontWeight.bold,
     color: Colors.black,
     fontSize: Dimens.twentySix,
   );
 
-  static TextStyle boldBlack22 = GoogleFonts.ptSans(
+  static TextStyle boldBlack22 = GoogleFonts.fredokaOne(
     fontWeight: FontWeight.bold,
     color: Colors.black,
     fontSize: Dimens.twentyTwo,
   );
 
-  static TextStyle black12 = GoogleFonts.ptSans(
+  static TextStyle black12 = GoogleFonts.fredokaOne(
     color: Colors.black,
     fontSize: Dimens.twelve,
     fontWeight: FontWeight.normal,
   );
 
-  static TextStyle appColor10 = GoogleFonts.ptSans(
+  static TextStyle appColor10 = GoogleFonts.fredokaOne(
     color: ColorsValue.primaryColor,
     fontSize: Dimens.ten,
     fontWeight: FontWeight.normal,
   );
 
-  static TextStyle white10 = GoogleFonts.ptSans(
+  static TextStyle white10 = GoogleFonts.fredokaOne(
     color: Colors.white,
     fontSize: Dimens.ten,
     fontWeight: FontWeight.normal,

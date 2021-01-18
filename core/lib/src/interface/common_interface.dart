@@ -50,6 +50,7 @@ class CommonInterface extends GetxController {
     Get.find<UserBloc>().add(UserDetailsEvent());
   }
 
+  /// Show a dialog before starting the quiz as a confirmation.
   void startQuiz() {
     Get.defaultDialog<void>(
       title: StringConstants.startQuiz,
@@ -67,8 +68,6 @@ class CommonInterface extends GetxController {
     );
   }
 
-  /// Get quiz details based on the quiz id
-  void getQuizDetails(String quizId) {
-
-  }
+  /// Update the user answer for the current question
+  void updateAnswer(String value) {}
 }

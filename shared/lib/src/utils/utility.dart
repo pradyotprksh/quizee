@@ -51,6 +51,30 @@ abstract class Utility {
     if (Get.isDialogOpen ?? false) Get.back<void>();
   }
 
+  /// Show a loading progress indicator
+  /// on top of the screen.
+  static void showLoadingDialog() {
+    closeDialog();
+    Get.dialog<void>(
+      WillPopScope(
+        onWillPop: () async => false,
+        child: Align(
+          alignment: Alignment.center,
+          child: Wrap(
+            children: [
+              const CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(
+                  ColorsValue.primaryColor,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      barrierDismissible: false,
+    );
+  }
+
   /// Show no internet dialog if there is no
   /// internet available.
   static void showNoInternetDialog() {
@@ -109,4 +133,7 @@ abstract class Utility {
   static void createInitialDi() {
     Get..put(RepositoryCalls())..put(UserBloc());
   }
+
+  /// replace unicode from the string
+  static String getUnicodeRemoveString(String value) => value.replaceAll('&#039;', '\'').replaceAll('&quot;', '"');
 }

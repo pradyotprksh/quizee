@@ -54,6 +54,10 @@ dependencies:
 
   lottie: ^0.7.0+1
 
+  double_back_to_close_app: ^1.2.0
+
+  percent_indicator: ^2.1.9
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

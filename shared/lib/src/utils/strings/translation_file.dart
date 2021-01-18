@@ -26,8 +26,9 @@ class TranslationsFile extends Translations {
           'welcome': 'Welcome',
           'startQuiz': 'Start Quiz',
           'quizNotCreated': 'Not able to create quiz',
+          'pressBackAgain': 'Press back again to leave the current quiz. The current question will be marked as unanswered.',
           'quizDetails':
-              'Starts the quiz. If a quiz is already in progress will continue that one instead of creating a new one. You will get 6 seconds for each question. If fail to answer or press back on the current question then that will be marked as unanswered. So play fast.',
+              'Starts the quiz. If a quiz is already in progress will continue that one instead of creating a new one. If pressed back on the current question then that will be marked as unanswered.',
         },
       };
 }

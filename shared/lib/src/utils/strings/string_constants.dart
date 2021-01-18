@@ -16,4 +16,5 @@ abstract class StringConstants {
   static String startQuiz = 'startQuiz'.tr;
   static String quizDetails = 'quizDetails'.tr;
   static String quizNotCreated = 'quizNotCreated'.tr;
+  static String pressBackAgain = 'pressBackAgain'.tr;
 }

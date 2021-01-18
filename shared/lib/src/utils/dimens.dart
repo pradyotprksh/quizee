@@ -164,6 +164,9 @@ abstract class Dimens {
   static const SizedBox boxWidth10 = SizedBox(
     width: ten,
   );
+  static const SizedBox boxWidth15 = SizedBox(
+    width: fifteen,
+  );
   static const SizedBox boxHeight20 = SizedBox(
     height: twenty,
   );
