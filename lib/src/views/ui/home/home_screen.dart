@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+import 'package:quizee/src/views/views.dart';
 import 'package:shared/shared.dart';
 
 /// The main home screen which will be shown for the authenticated users.
@@ -17,11 +18,15 @@ class HomeScreen extends StatelessWidget {
             Get.find<CommonInterface>().getUserDetails();
           },
           builder: (_interface) => BlocConsumer<UserBloc, UserState>(
+            listenWhen: (previousState, state) =>
+                state.submitType == SubmitType.home,
+            buildWhen: (previousState, state) =>
+                state.submitType == SubmitType.home,
             listener: (_, state) {
               if (state.status == PageStatus.error) {
                 Utility.showError(state.errorMessage);
               } else if (state.status == PageStatus.success) {
-                print('Quiz id: ${state.quizId}');
+                RouteManagement.goToQuiz(state.quizId);
               }
             },
             builder: (_, state) => Stack(

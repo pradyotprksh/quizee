@@ -8,3 +8,8 @@ enum PageStatus {
   results,
   success,
 }
+
+enum SubmitType {
+  home,
+  quiz,
+}

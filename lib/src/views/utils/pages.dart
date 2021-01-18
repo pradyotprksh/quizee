@@ -19,6 +19,7 @@ abstract class Pages {
     unknownRoute,
     homeRoute,
     loginRoute,
+    quizRoute,
   ];
 
   static var splashScreen = GetPage(
@@ -47,5 +48,12 @@ abstract class Pages {
     transitionDuration: transitionDuration,
     transition: Transition.downToUp,
     page: () => LoginScreen(),
+  );
+
+  static var quizRoute = GetPage(
+    name: QuizScreen.routeName,
+    transitionDuration: transitionDuration,
+    transition: Transition.downToUp,
+    page: () => QuizScreen(),
   );
 }

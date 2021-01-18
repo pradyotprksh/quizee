@@ -23,4 +23,14 @@ abstract class RouteManagement {
       HomeScreen.routeName,
     );
   }
+
+  /// Go to the home screen.
+  static void goToQuiz(String quizId) {
+    Get.toNamed<void>(
+      QuizScreen.routeName,
+      arguments: <String, dynamic>{
+        'quizId': quizId,
+      },
+    );
+  }
 }

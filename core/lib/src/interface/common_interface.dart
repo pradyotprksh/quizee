@@ -66,4 +66,9 @@ class CommonInterface extends GetxController {
       },
     );
   }
+
+  /// Get quiz details based on the quiz id
+  void getQuizDetails(String quizId) {
+
+  }
 }

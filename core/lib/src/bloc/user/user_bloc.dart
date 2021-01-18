@@ -66,7 +66,10 @@ class UserBloc extends Bloc<UserEvent, UserState> {
 
   /// Map user details event to state
   Stream<UserState> _mapUserDetailsEventToState(UserDetailsEvent event) async* {
-    yield state.copyWith(status: PageStatus.loading);
+    yield state.copyWith(
+      status: PageStatus.loading,
+      submitType: SubmitType.home,
+    );
     if (await Utility.isNetworkAvailable()) {
       try {
         var data = await FirebaseFirestore.instance
@@ -80,17 +83,20 @@ class UserBloc extends Bloc<UserEvent, UserState> {
           status: PageStatus.results,
           userName: userName,
           userProfilePic: userProfilePic,
+          submitType: SubmitType.home,
         );
       } catch (exception) {
         yield state.copyWith(
           status: PageStatus.error,
           errorMessage: exception.toString(),
+          submitType: SubmitType.home,
         );
       }
     } else {
       yield state.copyWith(
         status: PageStatus.error,
         errorMessage: StringConstants.noInternet,
+        submitType: SubmitType.home,
       );
     }
   }
@@ -145,17 +151,20 @@ class UserBloc extends Bloc<UserEvent, UserState> {
         yield state.copyWith(
           status: PageStatus.success,
           quizId: documentId,
+          submitType: SubmitType.home,
         );
       } else {
         yield state.copyWith(
           status: PageStatus.error,
           errorMessage: StringConstants.quizNotCreated,
+          submitType: SubmitType.home,
         );
       }
     } catch (exception) {
       yield state.copyWith(
         status: PageStatus.error,
         errorMessage: exception.toString(),
+        submitType: SubmitType.home,
       );
     }
   }
