@@ -19,6 +19,5 @@ abstract class NetworkConstants {
   static const String correctAnswer = 'correctAnswer';
   static const String options = 'options';
   static const String isAnswered = 'isAnswered';
-  static const String userAnswer = 'userAnswer';
   static const String score = 'score';
 }

@@ -23,29 +23,38 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       yield* _mapUserDetailsEventToState(event);
     } else if (event is NewQuizEvent) {
       yield* _mapNewQuizEventToState(event);
+    } else if (event is UpdateQuiz) {
+      yield* _mapUpdateQuizEventToState(event);
     }
   }
 
   /// Map login event to state
   Stream<UserState> _mapLoginEventToState(LoginEvent event) async* {
     yield state.copyWith(status: PageStatus.loading);
-    try {
-      var user = await _handleSignIn();
-      await FirebaseFirestore.instance
-          .collection(NetworkConstants.user)
-          .doc(user.uid)
-          .set(<String, dynamic>{
-        NetworkConstants.userId: user.uid,
-        NetworkConstants.userName: user.displayName,
-        NetworkConstants.userProfilePic: user.photoURL,
-      });
-      yield state.copyWith(
-        status: PageStatus.success,
-      );
-    } catch (exception) {
+    if (await Utility.isNetworkAvailable()) {
+      try {
+        var user = await _handleSignIn();
+        await FirebaseFirestore.instance
+            .collection(NetworkConstants.user)
+            .doc(user.uid)
+            .set(<String, dynamic>{
+          NetworkConstants.userId: user.uid,
+          NetworkConstants.userName: user.displayName,
+          NetworkConstants.userProfilePic: user.photoURL,
+        });
+        yield state.copyWith(
+          status: PageStatus.success,
+        );
+      } catch (exception) {
+        yield state.copyWith(
+          status: PageStatus.error,
+          errorMessage: exception.toString(),
+        );
+      }
+    } else {
       yield state.copyWith(
         status: PageStatus.error,
-        errorMessage: exception.toString(),
+        errorMessage: StringConstants.noInternet,
       );
     }
   }
@@ -139,7 +148,6 @@ class UserBloc extends Bloc<UserEvent, UserState> {
                 ..add(question.correctAnswer),
               NetworkConstants.correctAnswer: question.correctAnswer,
               NetworkConstants.isAnswered: false,
-              NetworkConstants.userAnswer: '',
             });
         }
         var documentReference = FirebaseFirestore.instance
@@ -168,6 +176,75 @@ class UserBloc extends Bloc<UserEvent, UserState> {
         status: PageStatus.error,
         errorMessage: exception.toString(),
         submitType: SubmitType.home,
+      );
+    }
+  }
+
+  /// Map update quiz event to state
+  Stream<UserState> _mapUpdateQuizEventToState(UpdateQuiz event) async* {
+    yield state.copyWith(
+      status: PageStatus.loading,
+      submitType: SubmitType.quiz,
+    );
+    try {
+      if (await Utility.isNetworkAvailable()) {
+        var value = event.value;
+        var quizId = event.quizId;
+        var documentSnapshot = FirebaseFirestore.instance
+            .collection(NetworkConstants.user)
+            .doc(FirebaseAuth.instance.currentUser.uid)
+            .collection(NetworkConstants.quiz)
+            .doc(quizId);
+        var quizDetails = await documentSnapshot.get();
+        var currentQuestion =
+            quizDetails.get(NetworkConstants.currentQuestion) as int;
+        var isFinish = quizDetails.get(NetworkConstants.isFinish) as bool;
+        var score = quizDetails.get(NetworkConstants.score) as int;
+        var completedOn = quizDetails.get(NetworkConstants.completedOn) as int;
+        var questions =
+            quizDetails[NetworkConstants.questions] as List<dynamic>;
+        var details = questions[currentQuestion] as Map<String, dynamic>;
+        var correctAnswer = details[NetworkConstants.correctAnswer] as String;
+        if (value == correctAnswer) {
+          ++score;
+        }
+        if (currentQuestion < 9) {
+          ++currentQuestion;
+        } else {
+          isFinish = true;
+          completedOn = DateTime.now().millisecondsSinceEpoch;
+        }
+        var query = <String, dynamic>{
+          NetworkConstants.isFinish: isFinish,
+          NetworkConstants.completedOn: completedOn,
+          NetworkConstants.currentQuestion: currentQuestion,
+          NetworkConstants.score: score,
+        };
+        await documentSnapshot.update(query);
+        if (isFinish) {
+          yield state.copyWith(
+            status: PageStatus.success,
+            submitType: SubmitType.quiz,
+            score: score,
+          );
+        } else {
+          yield state.copyWith(
+            status: PageStatus.results,
+            submitType: SubmitType.quiz,
+          );
+        }
+      } else {
+        yield state.copyWith(
+          status: PageStatus.error,
+          errorMessage: StringConstants.noInternet,
+          submitType: SubmitType.quiz,
+        );
+      }
+    } catch (exception) {
+      yield state.copyWith(
+        status: PageStatus.error,
+        errorMessage: exception.toString(),
+        submitType: SubmitType.quiz,
       );
     }
   }

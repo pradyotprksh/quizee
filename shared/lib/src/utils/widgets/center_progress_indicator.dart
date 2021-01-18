@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shared/shared.dart';
 
 /// A progress bar indicator in the center of the screen
 class CenterProgressIndicator extends StatelessWidget {
@@ -7,7 +6,7 @@ class CenterProgressIndicator extends StatelessWidget {
   Widget build(BuildContext context) => const Center(
         child: CircularProgressIndicator(
           valueColor: AlwaysStoppedAnimation<Color>(
-            ColorsValue.primaryColor,
+            Colors.redAccent,
           ),
         ),
       );

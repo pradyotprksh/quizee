@@ -69,5 +69,10 @@ class CommonInterface extends GetxController {
   }
 
   /// Update the user answer for the current question
-  void updateAnswer(String value) {}
+  void updateAnswer(String value, String quizId) {
+    Get.find<UserBloc>().add(UpdateQuiz(
+      value: value,
+      quizId: quizId,
+    ));
+  }
 }

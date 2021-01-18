@@ -222,6 +222,12 @@ abstract class Styles {
     fontSize: Dimens.sixTeen,
   );
 
+  static TextStyle boldAppColor80 = GoogleFonts.fredokaOne(
+    fontWeight: FontWeight.bold,
+    color: ColorsValue.primaryColor,
+    fontSize: Dimens.eighty,
+  );
+
   static TextStyle boldWhite16 = GoogleFonts.fredokaOne(
     fontWeight: FontWeight.bold,
     color: Colors.white,

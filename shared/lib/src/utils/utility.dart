@@ -1,11 +1,14 @@
+import 'dart:async';
 import 'dart:ui';
 
 import 'package:core/core.dart';
 import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:html_unescape/html_unescape.dart';
 import 'package:intl/intl.dart' as intl;
 import 'package:logger/logger.dart';
+import 'package:lottie/lottie.dart';
 import 'package:shared/shared.dart';
 
 /// A chunk of methods which can be used to
@@ -75,6 +78,11 @@ abstract class Utility {
     );
   }
 
+  /// Close any open bottom sheet.
+  static void closeBottomSheet() {
+    if (Get.isBottomSheetOpen ?? false) Get.back<void>();
+  }
+
   /// Show no internet dialog if there is no
   /// internet available.
   static void showNoInternetDialog() {
@@ -135,5 +143,61 @@ abstract class Utility {
   }
 
   /// replace unicode from the string
-  static String getUnicodeRemoveString(String value) => value.replaceAll('&#039;', '\'').replaceAll('&quot;', '"');
+  static String getUnicodeRemoveString(String value) {
+    var unescape = HtmlUnescape();
+    return unescape.convert(value);
+  }
+
+  static void showSuccess(String score) {
+    Timer.periodic(
+        const Duration(
+          seconds: 3,
+        ), (Timer timer) {
+      Utility.closeBottomSheet();
+      timer.cancel();
+    });
+    Get.bottomSheet<Future<void>>(
+      Container(
+        color: Colors.transparent,
+        height: Dimens.eightyPercent,
+        child: Container(
+          height: Dimens.eightyPercent,
+          padding: Dimens.padding15,
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(
+                Dimens.five,
+              ),
+              topRight: Radius.circular(
+                Dimens.five,
+              ),
+            ),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Lottie.asset(
+                AssetsConstants.congratulation,
+                repeat: true,
+              ),
+              const Spacer(),
+              Text(
+                StringConstants.yourScore,
+                style: Styles.black18,
+                textAlign: TextAlign.center,
+              ),
+              Text(
+                '$score / 10',
+                style: Styles.boldAppColor80,
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
+        ),
+      ),
+    ).then((value) {
+      Get.back<void>();
+    });
+  }
 }

@@ -11,6 +11,7 @@ class UserState extends Equatable {
     this.userProfilePic = '',
     this.quizId = '',
     this.submitType = SubmitType.home,
+    this.score = 0,
   });
 
   final PageStatus status;
@@ -19,6 +20,7 @@ class UserState extends Equatable {
   final String userProfilePic;
   final String quizId;
   final SubmitType submitType;
+  final int score;
 
   UserState copyWith({
     PageStatus status,
@@ -27,6 +29,7 @@ class UserState extends Equatable {
     String userProfilePic,
     String quizId,
     SubmitType submitType,
+    int score,
   }) =>
       UserState(
         status: status ?? this.status,
@@ -35,6 +38,7 @@ class UserState extends Equatable {
         userProfilePic: userProfilePic ?? this.userProfilePic,
         quizId: quizId ?? this.quizId,
         submitType: submitType ?? this.submitType,
+        score: score ?? this.score,
       );
 
   @override
