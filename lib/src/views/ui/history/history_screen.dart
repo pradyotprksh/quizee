@@ -46,6 +46,15 @@ class HistoryScreen extends StatelessWidget {
               );
             } else {
               var snapshot = quizSnapshot.data.docs;
+              if (snapshot.isEmpty) {
+                return Center(
+                  child: Icon(
+                    Icons.hourglass_empty,
+                    size: Dimens.eighty,
+                    color: Get.theme.primaryColor,
+                  ),
+                );
+              }
               return HistoryList(snapshot);
             }
           },
